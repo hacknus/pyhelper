@@ -11,8 +11,8 @@ class Bar:
     def update(self, i):
         time.sleep(0.1)  # do real work here
         # update the bar
-        j = int(i / self.max * self.width)
-        bar = "#" * j + " " * (self.width - j) + f" {i + 1}/{self.max}\r"
+        j = int((i + 1) / self.max * self.width)
+        bar = "[" + "#" * j + " " * (self.width - j) + f"] {i + 1}/{self.max}\r"
         sys.stdout.write(bar)
         sys.stdout.flush()
         if i == self.max - 1:
